@@ -204,7 +204,23 @@
             Pessoas se conectam com pessoas. Mostrar o rosto nas
             publicações transforma o conteúdo em autoridade.
           </p>
+
+          <!-- Card IA — coluna esquerda -->
+          <div class="rosto-ai-card">
+            <div class="rosto-ai-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l1.8 5.4L19.2 10l-5.4 1.8L12 17.4l-1.8-5.4L4.8 10l5.4-1.8L12 3z"/>
+                <path d="M19 16l.9 2.7 2.7.9-2.7.9L19 23l-.9-2.7-2.7-.9 2.7-.9L19 16z"/>
+                <path d="M5 18l.6 1.8 1.8.6-1.8.6L5 22.8l-.6-1.8-1.8-.6 1.8-.6L5 18z"/>
+              </svg>
+            </div>
+            <div class="rosto-ai-content">
+              <p class="rosto-ai-label">Produção Visual Escalável</p>
+              <p class="rosto-ai-text">Imagens com IA aceleram a produção mantendo consistência visual e percepção premium da marca pessoal.</p>
+            </div>
+          </div>
         </div>
+
         <div class="rosto-img-wrap">
           <img src="assets-tulio-rosto.png" alt="Dr. Túlio" />
         </div>
@@ -365,6 +381,57 @@
       object-fit: cover;
       object-position: 50% 5%;
       display: block;
+    }
+
+    /* Card IA — compacto, coluna esquerda */
+    .rosto-ai-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,28,30,0.16);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 24px;
+      box-shadow:
+        0 0 20px rgba(201,28,30,0.05),
+        inset 0 0 16px rgba(201,28,30,0.02);
+      position: relative;
+      overflow: hidden;
+    }
+    .rosto-ai-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 8%; right: 8%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,28,30,0.45) 40%, rgba(201,28,30,0.45) 60%, transparent);
+    }
+    .rosto-ai-icon {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      margin-top: 1px;
+      color: #C91C1E;
+      filter: drop-shadow(0 0 4px rgba(201,28,30,0.5));
+    }
+    .rosto-ai-icon svg { width: 100%; height: 100%; }
+    .rosto-ai-content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .rosto-ai-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #C91C1E;
+    }
+    .rosto-ai-text {
+      font-size: 12px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.5);
     }
 
     /* Cards row */
@@ -652,10 +719,6 @@
           </div>
         </div>
 
-        <!-- Direita: mockup celular -->
-        <div class="posts-right">
-          <img src="mockup-direcao-visual.png.png" alt="Mockup Instagram" class="mockup-img" />
-        </div>
 
       </div>
     </div>
@@ -675,10 +738,7 @@
     }
 
     .posts-layout {
-      display: grid;
-      grid-template-columns: 62fr 38fr;
-      gap: 0;
-      align-items: stretch;
+      display: block;
     }
 
     /* Left: z-index acima do mockup bg */
@@ -728,15 +788,16 @@
     .mockup-img {
       position: absolute;
       top: 50%;
-      right: -40px;
-      transform: translateY(-50%) rotate(10deg);
-      width: clamp(340px, 44vw, 620px);
+      right: -24px;
+      transform: translateY(-50%) rotate(8deg);
+      width: clamp(360px, 46vw, 640px);
       max-width: none;
-      opacity: 0.38;
+      opacity: 0.82;
       pointer-events: none;
       filter:
-        drop-shadow(0 48px 96px rgba(0,0,0,0.95))
-        drop-shadow(0 0 48px rgba(201,28,30,0.06));
+        drop-shadow(0 40px 80px rgba(0,0,0,0.9))
+        drop-shadow(0 0 40px rgba(201,28,30,0.18))
+        drop-shadow(0 0 80px rgba(201,28,30,0.08));
     }
 
     /* Mobile */
